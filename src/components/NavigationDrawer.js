@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
@@ -26,9 +27,10 @@ const NavigationDrawer = () => {
     };
 
     return (
-        <div className="navigation-drawer bg-emerald-400 py-5 px-2 rounded-tr-3xl">
-            <h1 className="font-black text-lg text-white"> <LocalHospital fontSize='large' className="ml-5 mb-1"></LocalHospital> MR APP</h1>
-
+        <div className="navigation-drawer py-5 px-2">
+            <Link to="/">
+                <h1 className="font-black text-lg text-white"> <LocalHospital fontSize='large' className="ml-5 mb-1"></LocalHospital> MR APP</h1>
+            </Link>
             <div className="nav-list-wapper mt-3 border rounded-xl bg-white p-1">
                 <List sx={{ fontSize: 'body2' }}>
                     <ListItemButton onClick={openUserManagement} sx={{ borderLeft: "20px" }}>
@@ -40,12 +42,14 @@ const NavigationDrawer = () => {
                     </ListItemButton>
                     <Collapse in={UMDrawer} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding sx={{ pl: 2 }}>
-                            <ListItemButton>
-                                <ListItemIcon >
-                                    <SupervisedUserCircle />
-                                </ListItemIcon>
-                                <ListItemText primary="Users" />
-                            </ListItemButton>
+                            <Link to="/users">
+                                <ListItemButton>
+                                    <ListItemIcon >
+                                        <SupervisedUserCircle />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Users" />
+                                </ListItemButton>
+                            </Link>
                             <ListItemButton>
                                 <ListItemIcon >
                                     <AdminPanelSettings />
