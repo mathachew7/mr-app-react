@@ -4,10 +4,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-}
-
-.content {
-  font-family: 'Raleway', sans-serif;
+  background-color: #F0F2F5;
 }
 
 .navigation-drawer {
