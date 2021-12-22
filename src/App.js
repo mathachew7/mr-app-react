@@ -5,7 +5,11 @@ import Dashboard from './components/Dashboard';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Users from './components/UserManagement/Users'
+import Category from './components/productManagement/Category'
+import GenericName from './components/productManagement/GenericName'
+import Product from './components/productManagement/Product';
 import MyAppBar from './components/AppBar'
+
 
 function App() {
   return (
@@ -26,6 +30,15 @@ function App() {
 
                 <Route path="/users">
                   <Users></Users>
+                </Route>
+                <Route path="/category">
+                  <Category></Category>
+                </Route>
+                <Route path="/generic">
+                  <GenericName></GenericName>
+                </Route>
+                <Route path="/product">
+                  <Product></Product>
                 </Route>
               </Switch>
             </div>

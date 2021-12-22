@@ -68,24 +68,30 @@ const NavigationDrawer = () => {
                     </ListItemButton>
                     <Collapse in={ProductsDrawer} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding sx={{ pl: 2 }}>
+                        <Link to="/category">
                             <ListItemButton>
                                 <ListItemIcon >
                                     <Category />
                                 </ListItemIcon>
                                 <ListItemText primary="Category" />
                             </ListItemButton>
+                         </Link>
+                         <Link to="/generic">
                             <ListItemButton>
                                 <ListItemIcon >
                                     <Medication />
                                 </ListItemIcon>
                                 <ListItemText primary="Medicine Generic" />
                             </ListItemButton>
+                         </Link>  
+                         <Link to="/product">
                             <ListItemButton>
                                 <ListItemIcon >
                                     <Inbox />
                                 </ListItemIcon>
                                 <ListItemText primary="Product" />
                             </ListItemButton>
+                         </Link>   
                         </List>
                     </Collapse>
 
