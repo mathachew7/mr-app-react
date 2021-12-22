@@ -11,6 +11,12 @@ import Chemists from './components/Chemist/Chemist';
 import Doctor from './components/Doctor/Doctors';
 import DailyCallReport from './components/DailyCallReport/DailyCallReport';
 import DoctorCall from './components/DoctorCall/DoctorCall';
+import ExpenseProcess from './components/ExpenseProcess/ExpenseProcess';
+import MonthlySale from './components/MonthlySale/MonthlySale';
+import TargetProduct from './components/TargetProduct/TargetProduct';
+import LeaveApplication from './components/LeaveApplication/LeaveApplication';
+import CRM from './components/CustomerRelationManagement/CRM';
+import BusinessDetails from './components/BusinessDetails/BusinessDetails';
 
 function App() {
   return (
@@ -52,6 +58,31 @@ function App() {
                 <Route path='/doctorCall'>
                   <DoctorCall></DoctorCall>
                 </Route>
+
+                <Route path="/expenseProcess">
+                  <ExpenseProcess></ExpenseProcess>
+                </Route>
+
+                <Route path="/monthlySale">
+                  <MonthlySale></MonthlySale>
+                </Route>
+
+                <Route path="/targetProduct">
+                  <TargetProduct></TargetProduct>
+                </Route>
+
+                <Route path="/leaveApplication">
+                  <LeaveApplication></LeaveApplication>
+                </Route>
+
+                <Route path="/crm">
+                  <CRM></CRM>
+                </Route>
+
+                <Route path="/businessDetails">
+                  <BusinessDetails></BusinessDetails>
+                </Route>
+
               </Switch>
             </div>
           </div>

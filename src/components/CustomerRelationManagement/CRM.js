@@ -1,20 +1,18 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { Fab } from '@mui/material';
-
 import { useState } from 'react';
-import { Download, Add, Print, ContactPhone } from '@mui/icons-material';
+import { Add, Download, Print, SupportAgent } from '@mui/icons-material';
+import CRMDialog from '../Dialogs/AddCRM';
 
-import DoctorCallDialog from '../Dialogs/AddDoctorCall';
+const CRM = () => {
 
-const DoctorCall = () => {
     const headers = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'date', headerName: 'Date', width: 120 },
-        { field: 'hospitalName', headerName: 'Hospital Name', width: 130 },
-        { field: 'departmentName', headerName: 'Department', width: 130 },
-        { field: 'doctorName', headerName: 'Doctor', width: 130 },
-        { field: 'productName', headerName: 'Product', width: 130 },
-        { field: 'productDetails', headerName: 'Description', width: 150 },
+        { field: 'id', headerName: 'ID', width: '70' },
+        { field: 'name', headerName: 'Name', width: 150 },
+        { field: 'userType', headerName: 'User Type', width: 120 },
+        { field: 'inputType', headerName: 'Input Type', width: 120 },
+        { field: 'inputName', headerName: 'Input Name', width: 150 },
+        { field: 'quantity', headerName: 'Quantity', width: 150 },
         { field: 'remarks', headerName: 'Remarks', width: 150 },
     ];
 
@@ -27,10 +25,11 @@ const DoctorCall = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl uppercase"> <ContactPhone className='mb-0.5'></ContactPhone> Doctor Call</h1>
+                <h1 className="text-2xl uppercase"> <SupportAgent fontSize='large'></SupportAgent> Customer Relation Management</h1>
                 <div className="flex items-center space-x-2">
                     <Fab color='primary' size='small' onClick={handleClickOpen}>
                         <Add></Add>
@@ -45,10 +44,9 @@ const DoctorCall = () => {
             </div>
 
             <DataGrid columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />
-
-            <DoctorCallDialog open={open} handleClose={handleClose}></DoctorCallDialog>
-        </div>
+            <CRMDialog open={open} handleClose={handleClose}></CRMDialog>
+        </div >
     );
 }
 
-export default DoctorCall;
+export default CRM;

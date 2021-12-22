@@ -7,13 +7,13 @@ import DailyCallReportDialog from '../Dialogs/AddDailyCallReport';
 
 const DailyCallReport = () => {
     const headers = [
-        { field: 'id', headerName: 'ID', width: 80 },
-        { field: 'name', headerName: 'Full Name', width: 150 },
-        { field: 'type', headerName: 'Type', width: 150 },
-        { field: 'product', headerName: 'Product', width: 150 },
-        { field: 'productDetails', headerName: 'Product Details', width: 200 },
-        { field: 'date', headerName: 'Date', width: 150 },
-        { field: 'description', headerName: 'Description', width: 200 },
+        { field: 'id', headerName: 'ID', width: 70 },
+        { field: 'name', headerName: 'Full Name', width: 130 },
+        { field: 'type', headerName: 'Type', width: 100 },
+        { field: 'product', headerName: 'Product', width: 120 },
+        { field: 'productDetails', headerName: 'Product Details', width: 150 },
+        { field: 'date', headerName: 'Date', width: 120 },
+        { field: 'description', headerName: 'Description', width: 150 },
         { field: 'actions', headerName: 'Actions', width: 150 },
     ];
 

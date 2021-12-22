@@ -1,21 +1,19 @@
 import { DataGrid } from '@mui/x-data-grid';
 import { Fab } from '@mui/material';
-
 import { useState } from 'react';
-import { Download, Add, Print, ContactPhone } from '@mui/icons-material';
+import { Add, Business, Download, Print } from '@mui/icons-material';
+import BusinessDetailsDialog from "../Dialogs/AddBusinessDetails";
 
-import DoctorCallDialog from '../Dialogs/AddDoctorCall';
+const BusinessDetails = () => {
 
-const DoctorCall = () => {
     const headers = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'date', headerName: 'Date', width: 120 },
-        { field: 'hospitalName', headerName: 'Hospital Name', width: 130 },
-        { field: 'departmentName', headerName: 'Department', width: 130 },
-        { field: 'doctorName', headerName: 'Doctor', width: 130 },
+        { field: 'id', headerName: 'ID', width: '70' },
+        { field: 'doctorName', headerName: 'Doctor', width: 120 },
+        { field: 'departmentName', headerName: 'Department', width: 150 },
+        { field: 'hospitalName', headerName: 'Hospital', width: 130 },
         { field: 'productName', headerName: 'Product', width: 130 },
-        { field: 'productDetails', headerName: 'Description', width: 150 },
-        { field: 'remarks', headerName: 'Remarks', width: 150 },
+        { field: 'tentativeSales', headerName: 'Tentative Sales', width: 150 },
+        { field: 'competitorActivities', headerName: 'Competitor Activities', width: 200 },
     ];
 
     const [open, setOpen] = useState(false);
@@ -27,10 +25,11 @@ const DoctorCall = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl uppercase"> <ContactPhone className='mb-0.5'></ContactPhone> Doctor Call</h1>
+                <h1 className="text-2xl uppercase"> <Business className='mb-1' fontSize='large'></Business> Dr. Business Details </h1>
                 <div className="flex items-center space-x-2">
                     <Fab color='primary' size='small' onClick={handleClickOpen}>
                         <Add></Add>
@@ -45,10 +44,9 @@ const DoctorCall = () => {
             </div>
 
             <DataGrid columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />
-
-            <DoctorCallDialog open={open} handleClose={handleClose}></DoctorCallDialog>
+            <BusinessDetailsDialog open={open} handleClose={handleClose}></BusinessDetailsDialog>
         </div>
     );
 }
 
-export default DoctorCall;
+export default BusinessDetails;
