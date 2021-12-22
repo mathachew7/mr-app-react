@@ -10,7 +10,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
-import { AdminPanelSettings, SupervisedUserCircle, LocalHospital, ManageAccounts, AllInbox, Category, Inbox, Medication, Inventory2, Science, Masks, Flight, PhoneCallback, LocalAtm, Paid, TrackChanges, Article, SupportAgent, Business, Timelapse, ContactPhone } from '@mui/icons-material';
+import { AdminPanelSettings, SupervisedUserCircle, LocalHospital, ManageAccounts, AllInbox, Category, Inbox, Medication, Inventory2, Science, Masks, Flight, PhoneCallback, LocalAtm, Paid, TrackChanges, Article, SupportAgent, Business, Timelapse, ContactPhone, Dashboard } from '@mui/icons-material';
 
 import NavList from "./NavList";
 
@@ -33,6 +33,8 @@ const NavigationDrawer = () => {
             </Link>
             <div className="nav-list-wapper mt-3 border rounded-xl bg-white p-1">
                 <List sx={{ fontSize: 'body2' }}>
+
+                    <NavList title={'Dashboard'} icon={<Dashboard />} link={'/'}> </NavList>
                     <ListItemButton onClick={openUserManagement} sx={{ borderLeft: "20px" }}>
                         <ListItemIcon>
                             <ManageAccounts></ManageAccounts>
@@ -95,11 +97,11 @@ const NavigationDrawer = () => {
                         </List>
                     </Collapse>
 
-                    <NavList title={'Stokiest'} icon={<Inventory2 />}> </NavList>
-                    <NavList title={'Chemist'} icon={<Science />}> </NavList>
-                    <NavList title={'Doctor'} icon={<Masks />}> </NavList>
-                    <NavList title={'Daily Call Report'} icon={<PhoneCallback />}> </NavList>
-                    <NavList title={'Doctor Call'} icon={<ContactPhone />}> </NavList>
+                    <NavList title={'Stokiest'} icon={<Inventory2 />} link={'/stokiest'}> </NavList>
+                    <NavList title={'Chemist'} icon={<Science />} link={'/chemist'}> </NavList>
+                    <NavList title={'Doctor'} icon={<Masks />} link={'/doctor'}> </NavList>
+                    <NavList title={'Daily Call Report'} icon={<PhoneCallback />} link={'/dailyCallReport'}> </NavList>
+                    <NavList title={'Doctor Call'} icon={<ContactPhone />} link={'/doctorCall'}> </NavList>
                     <NavList title={'Expense Process'} icon={<LocalAtm />}> </NavList>
                     <NavList title={'Sale'} icon={<Paid />}> </NavList>
                     <NavList title={'Major Product Target'} icon={<TrackChanges />}> </NavList>

@@ -1,10 +1,10 @@
 
 import { DataGrid } from '@mui/x-data-grid';
-import { Button, Dialog, DialogActions, DialogTitle, Divider, styled } from '@mui/material';
-import { CalendarToday, Camera, Cancel, Email, Flag, GroupAdd, Home, Lock, Map, Phone, Photo, Save, TextFormat } from '@mui/icons-material';
+import { Button, Dialog, DialogActions, Divider, FormControl, IconButton, InputLabel, MenuItem, Select, styled } from '@mui/material';
+import { CalendarToday, Close, Email, GroupAdd, Home, Lock, Map, Phone, Photo, Save, SupervisedUserCircle, TextFormat } from '@mui/icons-material';
 import { useState } from 'react';
-import InputField from '../InputField';
-import SwitchButton from '../SwitchButton';
+import InputField from '../InputFields/InputField';
+import SwitchButton from '../InputFields/SwitchButton';
 
 
 const Users = () => {
@@ -36,6 +36,12 @@ const Users = () => {
         setOpen(false);
     };
 
+    const [country, setcountry] = useState('');
+
+    const handleCountrySelect = (e) => {
+        setcountry(e.target.value);
+    }
+
     const Input = styled('input')(
         {
             display: 'none',
@@ -45,36 +51,54 @@ const Users = () => {
     return (
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-semibold uppercase">Users</h1>
+                <h1 className="text-2xl uppercase"> <SupervisedUserCircle fontSize='large'></SupervisedUserCircle> Users</h1>
                 <div className="flex items-center">
                     <Button onClick={handleClickOpen} color='primary' variant='contained' startIcon={<GroupAdd />}>
                         Add User
                     </Button>
                 </div>
             </div>
-            <DataGrid rows={users} columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '8px' }} />
+            <DataGrid rows={users} columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />
 
 
-            <Dialog open={open} onClose={handleClose} fullWidth maxWidth='lg' disableEscapeKeyDown>
-                <DialogTitle>
-                    Add User
-                </DialogTitle>
+            <Dialog open={open} onClose={handleClose} fullWidth maxWidth='lg' disableEscapeKeyDown="true" onBackdropClick="false">
+                <div className='flex items-center justify-between bg-sky-700 text-white py-2 px-5'>
+                    <h1 className='text-xl'>Add User</h1>
+                    <IconButton onClick={handleClose}>
+                        <Close className='text-white'></Close>
+                    </IconButton>
+                </div>
 
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-7 px-5 mt-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-7 px-5 mt-8">
                     <InputField label={'First Name'} type={'text'} required={'required'} icon={<TextFormat></TextFormat>}></InputField>
                     <InputField label={'Middle Name'} type={'text'} icon={<TextFormat></TextFormat>}></InputField>
                     <InputField label={'Last Name'} type={'text'} required={'required'} icon={<TextFormat></TextFormat>}></InputField>
                     <InputField label={'Email'} type={'email'} required={'required'} icon={<Email></Email>}></InputField>
-                    <InputField label={'Password'} type={'password'} required={'required'} icon={<Lock></Lock>}></InputField>
                     <InputField label={'Phone'} type={'number'} required={'required'} icon={<Phone></Phone>}></InputField>
                     <InputField label={'Date of Birth'} type={'date'} required={'required'} icon={<CalendarToday></CalendarToday>}></InputField>
-                    <InputField label={'Address'} type={'text'} required={'required'} icon={<Home></Home>}></InputField>
+                    <FormControl>
+                        <InputLabel id="country-select-label">Country</InputLabel>
+                        <Select
+                            required="true"
+                            labelId="country-select-label"
+                            id="demo-simple-select"
+                            value={country}
+                            label="Country"
+                            onChange={handleCountrySelect}
+                        >
+                            <MenuItem value=''>
+                                <em>None</em> </MenuItem>
+                            <MenuItem value='Nepal'> Nepal </MenuItem>
+                            <MenuItem value='India'> India </MenuItem>
+                            <MenuItem value='China'> China </MenuItem>
+                        </Select>
+                    </FormControl>
                     <InputField label={'City'} type={'text'} required={'required'} icon={<Map></Map>}></InputField>
-                    <InputField label={'Country'} type={'text'} required={'required'} icon={<Flag></Flag>}></InputField>
+                    <InputField label={'Address'} type={'text'} required={'required'} icon={<Home></Home>}></InputField>
+                    <InputField label={'Password'} type={'password'} required={'required'} icon={<Lock></Lock>}></InputField>
                     <label htmlFor="contained-button-file">
                         <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="outlined" size='large' fullWidth component="span" startIcon={<Photo></Photo>}>
+                        <Button variant="outlined" sx={{ height: '56px' }} fullWidth component="span" startIcon={<Photo></Photo>}>
                             Profile Image
                         </Button>
                     </label>
@@ -82,14 +106,13 @@ const Users = () => {
                 </div>
                 <Divider sx={{ marginTop: '10px' }}></Divider>
                 <DialogActions>
-                    <Button onClick={handleClose} startIcon={<Cancel></Cancel>}>
+                    <Button variant='text' sx={{ color: '#424242' }} onClick={handleClose} startIcon={<Close></Close>}>
                         Cancel
                     </Button>
                     <Button variant='contained' endIcon={<Save></Save>}>
                         Save
                     </Button>
                 </DialogActions>
-
             </Dialog>
         </div >
     );
