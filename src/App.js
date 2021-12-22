@@ -10,6 +10,7 @@ import Stokiest from './components/Stokiest/Stokiest';
 import Chemists from './components/Chemist/Chemist';
 import Doctor from './components/Doctor/Doctors';
 import DailyCallReport from './components/DailyCallReport/DailyCallReport';
+import DoctorCall from './components/DoctorCall/DoctorCall';
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
 
                 <Route path="/dailyCallReport">
                   <DailyCallReport></DailyCallReport>
+                </Route>
+
+                <Route path='/doctorCall'>
+                  <DoctorCall></DoctorCall>
                 </Route>
               </Switch>
             </div>

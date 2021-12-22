@@ -3,8 +3,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button, Dialog, DialogActions, Divider, FormControl, IconButton, InputLabel, MenuItem, Select, styled } from '@mui/material';
 import { CalendarToday, Close, Email, GroupAdd, Home, Lock, Map, Phone, Photo, Save, SupervisedUserCircle, TextFormat } from '@mui/icons-material';
 import { useState } from 'react';
-import InputField from '../InputField';
-import SwitchButton from '../SwitchButton';
+import InputField from '../InputFields/InputField';
+import SwitchButton from '../InputFields/SwitchButton';
 
 
 const Users = () => {

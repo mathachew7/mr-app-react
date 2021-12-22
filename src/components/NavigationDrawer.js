@@ -95,7 +95,7 @@ const NavigationDrawer = () => {
                     <NavList title={'Chemist'} icon={<Science />} link={'/chemist'}> </NavList>
                     <NavList title={'Doctor'} icon={<Masks />} link={'/doctor'}> </NavList>
                     <NavList title={'Daily Call Report'} icon={<PhoneCallback />} link={'/dailyCallReport'}> </NavList>
-                    <NavList title={'Doctor Call'} icon={<ContactPhone />}> </NavList>
+                    <NavList title={'Doctor Call'} icon={<ContactPhone />} link={'/doctorCall'}> </NavList>
                     <NavList title={'Expense Process'} icon={<LocalAtm />}> </NavList>
                     <NavList title={'Sale'} icon={<Paid />}> </NavList>
                     <NavList title={'Major Product Target'} icon={<TrackChanges />}> </NavList>
