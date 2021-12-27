@@ -5,12 +5,14 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #F0F2F5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .navigation-drawer {
   width: 22%;
   height: 100vh;
-  background: #99A799;
+  background: #f50057;
 }
 
 .nav-list-wapper {
@@ -33,7 +35,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #99A799;
+  background: #f50057;
 }
 
 /* Handle on hover */
@@ -43,4 +45,15 @@ body {
 
 .content {
   width: 78%;
+}
+
+.dialog-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  padding: 8px 20px;
+  background-color: #f50057;
+
 }

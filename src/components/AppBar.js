@@ -13,7 +13,7 @@ const TopNavBar = () => {
     };
     return (
         <div>
-            <AppBar position="sticky" className="p-4" style={{ background: '#99A799' }} elevation={0}>
+            <AppBar position="sticky" className="p-4" style={{ background: '#f50057' }} elevation={0}>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-1 bg-white p-2 rounded-3xl w-64 text-gray-800">
                         <Search></Search>

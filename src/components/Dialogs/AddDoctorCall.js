@@ -7,7 +7,7 @@ const DoctorCallDialog = ({ open, handleClose }) => {
     return (
         <div>
             <Dialog open={open} onClose={() => handleClose()} fullWidth maxWidth='lg' disableEscapeKeyDown="true" onBackdropClick="false">
-                <div className='flex items-center justify-between bg-sky-700 text-white py-2 px-5'>
+                <div className='dialog-title'>
                     <h1 className='text-xl'>Doctor Call</h1>
                     <IconButton onClick={() => handleClose()}>
                         <Close className='text-white'></Close>

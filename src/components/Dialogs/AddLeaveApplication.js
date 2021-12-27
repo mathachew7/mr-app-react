@@ -1,12 +1,12 @@
 import { Save, Close, Event, TextFormat } from "@mui/icons-material";
-import { Button, Dialog, DialogActions, Divider, IconButton, styled, Select, FormControl, InputLabel, MenuItem } from '@mui/material';
+import { Button, Dialog, DialogActions, Divider, IconButton } from '@mui/material';
 import InputField from "../InputFields/InputField";
 import TextArea from "../InputFields/TextAreas";
 
 const LeaveApplicationDialog = ({ open, handleClose }) => {
     return (
         <Dialog open={open} onClose={() => handleClose()} fullWidth maxWidth='lg' disableEscapeKeyDown="true" onBackdropClick="false">
-            <div className='flex items-center justify-between bg-sky-700 text-white py-2 px-5'>
+            <div className='dialog-title'>
                 <h1 className='text-xl'>Leave Application</h1>
                 <IconButton onClick={() => handleClose()}>
                     <Close className='text-white'></Close>

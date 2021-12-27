@@ -9,7 +9,7 @@ const NavList = ({ title, icon, link }) => {
         <div className="nav-list">
             <Link to={link}>
                 <ListItemButton>
-                    <ListItemIcon>
+                    <ListItemIcon color='primary'>
                         {icon}
                     </ListItemIcon>
                     <ListItemText>{title}</ListItemText>

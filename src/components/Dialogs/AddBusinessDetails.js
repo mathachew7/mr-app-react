@@ -6,7 +6,7 @@ import InputField from "../InputFields/InputField";
 const BusinessDetailsDialog = ({ open, handleClose }) => {
     return (
         <Dialog open={open} onClose={() => handleClose()} fullWidth maxWidth='lg' disableEscapeKeyDown="true" onBackdropClick="false">
-            <div className='flex items-center justify-between bg-sky-700 text-white py-2 px-5'>
+            <div className='dialog-title'>
                 <h1 className='text-xl'>Dr. Business Details</h1>
                 <IconButton onClick={() => handleClose()}>
                     <Close className='text-white'></Close>

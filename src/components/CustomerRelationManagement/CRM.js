@@ -1,8 +1,8 @@
 import { DataGrid } from '@mui/x-data-grid';
-import { Fab } from '@mui/material';
 import { useState } from 'react';
-import { Add, Download, Print, SupportAgent } from '@mui/icons-material';
+import { SupportAgent } from '@mui/icons-material';
 import CRMDialog from '../Dialogs/AddCRM';
+import FabButtons from '../FabButtons/FabButtons';
 
 const CRM = () => {
 
@@ -29,18 +29,8 @@ const CRM = () => {
     return (
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl uppercase"> <SupportAgent fontSize='large'></SupportAgent> Customer Relation Management</h1>
-                <div className="flex items-center space-x-2">
-                    <Fab color='primary' size='small' onClick={handleClickOpen}>
-                        <Add></Add>
-                    </Fab>
-                    <Fab style={{ background: '#f44336' }} size='small'>
-                        <Download className='text-white'></Download>
-                    </Fab>
-                    <Fab style={{ background: '#43a047' }} size='small'>
-                        <Print className='text-white'></Print>
-                    </Fab>
-                </div>
+                <h1 className="text-2xl uppercase"> <SupportAgent fontSize='large'></SupportAgent> Dr. Service Request </h1>
+                <FabButtons handleClickOpen={handleClickOpen} />
             </div>
 
             <DataGrid columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />

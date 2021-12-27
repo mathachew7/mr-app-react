@@ -1,8 +1,8 @@
 import { DataGrid } from '@mui/x-data-grid';
-import { Fab } from '@mui/material';
 import { useState } from 'react';
 import StokiestDialog from '../Dialogs/AddStokiest';
-import { Add, Print, Download, Inventory2 } from '@mui/icons-material';
+import FabButtons from '../FabButtons/FabButtons'
+import { Inventory2 } from '@mui/icons-material';
 
 const Stokiest = () => {
     const headers = [
@@ -36,17 +36,7 @@ const Stokiest = () => {
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
                 <h1 className="text-2xl uppercase"> <Inventory2 fontSize='large'></Inventory2> Stokiests</h1>
-                <div className="flex items-center space-x-2">
-                    <Fab color='primary' size='small' onClick={handleClickOpen}>
-                        <Add></Add>
-                    </Fab>
-                    <Fab style={{ background: '#f44336' }} size='small'>
-                        <Download className='text-white'></Download>
-                    </Fab>
-                    <Fab style={{ background: '#43a047' }} size='small'>
-                        <Print className='text-white'></Print>
-                    </Fab>
-                </div>
+                <FabButtons handleClickOpen={handleClickOpen}></FabButtons>
             </div>
 
             <DataGrid rows={stokiests} columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />
