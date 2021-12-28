@@ -2,14 +2,14 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Fab } from '@mui/material';
 
 import { useState } from 'react';
-import { Download, Add, Print, Category } from '@mui/icons-material';
+import { Download, Add, Print, Medication } from '@mui/icons-material';
 
-import CategoryDialog from '../Dialogs/AddCategory';
+import MedicineGenericDialog from '../Dialogs/AddMedicineGeneric';
 
-const ProductCategory = () => {
+const GenericName = () => {
     const headers = [
         { field: 'id', headerName: 'ID', width: 80 },
-        { field: 'categoryName', headerName: 'Category Name', width: 170},
+        { field: 'categoryName', headerName: 'Generic Name', width: 150},
         { field: 'actions', headerName: 'Actions', width: 150 },
     ];
 
@@ -26,7 +26,7 @@ const ProductCategory = () => {
     return (
         <div style={{ height: '400px', width: '100%' }}>
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl uppercase"> <Category className='mb-0.5'></Category> Category </h1>
+                <h1 className="text-2xl uppercase"> <Medication className='mb-0.5'></Medication> Medicine Generic </h1>
                 <div className="flex items-center space-x-2">
                     <Fab color='primary' size='small' onClick={handleClickOpen}>
                         <Add></Add>
@@ -40,9 +40,9 @@ const ProductCategory = () => {
                 </div>
             </div>
             <DataGrid columns={headers} style={{ borderWidth: '2px', borderRadius: '12px', marginTop: '10px', background: '#ffffff' }} />
-            <CategoryDialog open={open} handleClose={handleClose}></CategoryDialog>
+            <MedicineGenericDialog open={open} handleClose={handleClose}></MedicineGenericDialog>
         </div>
     );
 }
 
-export default ProductCategory;
+export default GenericName;

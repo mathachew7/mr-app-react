@@ -2,22 +2,18 @@ import './App.css'
 import './tailwind.css'
 import NavigationDrawer from './components/NavigationDrawer';
 import Dashboard from './components/Dashboard';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MyAppBar from './components/AppBar'
 
-import Users from './components/UserManagement/Users'
-<<<<<<< HEAD
-import Category from './components/productManagement/Category'
-import GenericName from './components/productManagement/GenericName'
+import Users from './components/UserManagement/Users';
+import Category from './components/productManagement/Category';
+import MedicineGeneric from './components/productManagement/MedicineGeneric';
 import Product from './components/productManagement/Product';
-import MyAppBar from './components/AppBar'
-=======
 import Stokiest from './components/Stokiest/Stokiest';
 import Chemists from './components/Chemist/Chemist';
 import Doctor from './components/Doctor/Doctors';
 import DailyCallReport from './components/DailyCallReport/DailyCallReport';
 import DoctorCall from './components/DoctorCall/DoctorCall';
->>>>>>> a8c866af645b3e4a56b963da38668287efac199e
 
 
 function App() {
@@ -40,16 +36,16 @@ function App() {
                 <Route path="/users">
                   <Users></Users>
                 </Route>
-<<<<<<< HEAD
+
                 <Route path="/category">
                   <Category></Category>
                 </Route>
                 <Route path="/generic">
-                  <GenericName></GenericName>
+                  <MedicineGeneric></MedicineGeneric>
                 </Route>
                 <Route path="/product">
                   <Product></Product>
-=======
+                  </Route>
 
                 <Route path="/stokiest">
                   <Stokiest></Stokiest>
@@ -69,7 +65,6 @@ function App() {
 
                 <Route path='/doctorCall'>
                   <DoctorCall></DoctorCall>
->>>>>>> a8c866af645b3e4a56b963da38668287efac199e
                 </Route>
               </Switch>
             </div>
